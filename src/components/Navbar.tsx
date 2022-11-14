@@ -18,7 +18,7 @@ export default function Navbar() {
 			</div>
 			<div className="links-right">
 				<img src={cart} alt="" />
-				<img src={avatar} alt="" width={50} />
+				<img src={avatar} alt="" width={50} className="avatar" />
 			</div>
 		</nav>
 	);

@@ -81,5 +81,16 @@ body {
 			display: inline-block;
 			cursor: pointer;
 		}
+
+		img:hover {
+			fill: red;
+		}
+
+		img.avatar {
+			&:hover {
+				border: 2px solid $orange;
+				border-radius: 50%;
+			}
+		}
 	}
 }
