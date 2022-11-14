@@ -28,4 +28,58 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	color: $orange;
 	font-size: 1.6rem;
+	padding: 0 15rem;
+}
+
+/* Navbar */
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 0 4rem 0;
+	border-bottom: 1px solid $grayish-blue;
+	color: $dark-grayish-blue;
+
+	.links-left {
+		ul {
+			list-style: none;
+			display: inline-flex;
+		}
+
+		li {
+			margin: 0 3rem;
+			cursor: pointer;
+			position: relative;
+
+			&:hover::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: -5.3rem;
+				border-bottom: 5px solid $orange;
+			}
+			&:hover {
+				color: $dark-blue;
+			}
+		}
+
+		img {
+			display: inline-block;
+			margin-right: 6rem;
+			cursor: pointer;
+		}
+	}
+
+	.links-right {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 12rem;
+
+		img {
+			display: inline-block;
+			cursor: pointer;
+		}
+	}
 }
