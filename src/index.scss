@@ -291,3 +291,36 @@ body {
     align-items: center;
   }
 }
+
+.cart {
+  min-height: 255px;
+  width: 360px;
+  z-index: 10;
+  position: absolute;
+  right: 15rem;
+  top: 8rem;
+  background-color: $white;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
+
+  .line {
+    color: $light-grayish-blue;
+  }
+  header {
+    padding: 2rem;
+  }
+
+  .cart-items {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+
+    p {
+      color: $dark-grayish-blue;
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
+  }
+}

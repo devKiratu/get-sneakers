@@ -5,7 +5,7 @@ import ImageThumbnails from "./ImageThumbnails";
 import ViewImageModal from "./ViewImageModal";
 
 export default function ProductDetails() {
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <>
       {modalOpen && <ViewImageModal onCloseModal={setModalOpen} />}
