@@ -1,0 +1,33 @@
+.menu-container {
+  position: fixed;
+  z-index: 15;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  background-color: $light-black;
+  display: flex;
+  justify-content: flex-start;
+
+  .menu-content {
+    background-color: $white;
+    width: 250px;
+    height: 100%;
+    padding: 2rem;
+
+    img {
+      margin-bottom: 3rem;
+      width: 1rem;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      padding: 1rem 0;
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
+  }
+}
