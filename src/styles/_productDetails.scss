@@ -1,36 +1,9 @@
 /* Product Details */
 
-%arrow-icons {
-  position: absolute;
-  width: 3rem;
-  height: 3rem;
-  background-color: $white;
-  border-radius: 50%;
-  top: 25%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-  cursor: pointer;
-
-  img {
-    width: 0.8rem;
-  }
-}
-
 .product-details {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10rem;
-
-  .right-icon {
-    @extend %arrow-icons;
-    right: 2rem;
-  }
-  .left-icon {
-    @extend %arrow-icons;
-    left: 2rem;
-  }
 
   .left-icon,
   .right-icon {
@@ -159,9 +132,42 @@
     grid-template-columns: 1fr;
     gap: 0;
 
-    .left-icon,
     .right-icon {
+      position: absolute;
+      width: 3rem;
+      height: 3rem;
+      background-color: $white;
+      border-radius: 50%;
+      top: 25%;
+      right: 2rem;
       display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      cursor: pointer;
+
+      img {
+        width: 0.8rem;
+      }
+    }
+
+    .left-icon {
+      position: absolute;
+      width: 3rem;
+      height: 3rem;
+      background-color: $white;
+      border-radius: 50%;
+      top: 25%;
+      left: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      cursor: pointer;
+
+      img {
+        width: 0.8rem;
+      }
     }
 
     .images-container {
