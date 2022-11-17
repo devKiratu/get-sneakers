@@ -1,0 +1,73 @@
+/* View Image Modal */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: $light-black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modal-content {
+    position: relative;
+    width: 450px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .current-image {
+      width: 100%;
+      height: auto;
+      border-radius: 1rem;
+    }
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .close-icon {
+    fill: $orange;
+    stroke: $orange;
+    background-color: $orange;
+    position: absolute;
+    top: -4rem;
+    width: 2rem;
+    right: 0;
+  }
+
+  .right-icon {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    background-color: $white;
+    border-radius: 50%;
+    right: -2rem;
+    top: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .left-icon {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    background-color: $white;
+    border-radius: 50%;
+    left: -2rem;
+    top: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 377px) {
+    display: none;
+  }
+}

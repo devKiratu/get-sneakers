@@ -6,11 +6,15 @@ import ProductDetails from "./components/ProductDetails";
 
 function App() {
   const [cartOpen, setCartOpen] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div>
       {menuOpen && <MobileMenu onCloseMenu={setMenuOpen} />}
-      <Navbar onToggleCart={setCartOpen} cartOpen={cartOpen} />
+      <Navbar
+        onToggleCart={setCartOpen}
+        cartOpen={cartOpen}
+        onOpenMenu={setMenuOpen}
+      />
       {cartOpen && <Cart />}
       <ProductDetails />
     </div>

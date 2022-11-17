@@ -1,7 +1,7 @@
 import CartItem from "./CartItem";
 
 export default function Cart() {
-  const isEmpty = true;
+  const isEmpty = !true;
   return (
     <div className="cart">
       <header>
