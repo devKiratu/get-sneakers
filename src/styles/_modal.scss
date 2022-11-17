@@ -1,5 +1,17 @@
 /* View Image Modal */
 
+%arrow-icons {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  background-color: $white;
+  border-radius: 50%;
+  top: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -43,28 +55,12 @@
   }
 
   .right-icon {
-    position: absolute;
-    width: 4rem;
-    height: 4rem;
-    background-color: $white;
-    border-radius: 50%;
+    @extend %arrow-icons;
     right: -2rem;
-    top: 35%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   .left-icon {
-    position: absolute;
-    width: 4rem;
-    height: 4rem;
-    background-color: $white;
-    border-radius: 50%;
+    @extend %arrow-icons;
     left: -2rem;
-    top: 35%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   @media screen and (max-width: 377px) {
