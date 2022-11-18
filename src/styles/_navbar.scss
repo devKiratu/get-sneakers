@@ -69,7 +69,29 @@
     }
   }
 
+  @media screen and (max-width: 1024px) {
+    padding-bottom: 3rem;
+    .links-left {
+      img.logo {
+        width: 12rem;
+        margin-right: 3rem;
+      }
+      li {
+        margin: 0;
+        margin-right: 2rem;
+        font-size: 1.4rem;
+      }
+    }
+    .links-right {
+      width: 9rem;
+      img.avatar {
+        width: 40px;
+      }
+    }
+  }
+
   @media screen and (max-width: 768px) {
+    padding-top: 2rem;
     .links-left {
       .menu-icon {
         display: inline-block;
@@ -95,7 +117,7 @@
 
     .links-left {
       img.logo {
-        width: 12rem;
+        width: 11rem;
       }
 
       .menu-icon {
@@ -105,7 +127,7 @@
     }
 
     .links-right {
-      width: 7rem;
+      width: 6rem;
 
       .cart-icon {
         width: 1.8rem;
