@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .modal {
@@ -45,22 +46,36 @@
   }
 
   .close-icon {
-    fill: $orange;
-    stroke: $orange;
-    background-color: $orange;
+    color: $white;
     position: absolute;
     top: -4rem;
-    width: 2rem;
     right: 0;
+    cursor: pointer;
+    transform: scale(1.2);
+
+    &:hover,
+    &:active {
+      color: $orange;
+    }
   }
 
-  .right-icon {
+  .right-icon-container {
     @extend %arrow-icons;
     right: -2rem;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $orange;
+    }
   }
-  .left-icon {
+  .left-icon-container {
     @extend %arrow-icons;
     left: -2rem;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $orange;
+    }
   }
 
   @media screen and (max-width: 768px) {

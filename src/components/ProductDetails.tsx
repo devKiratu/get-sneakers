@@ -1,10 +1,10 @@
 import { useState } from "react";
 import product from "../images/image-product-1.jpg";
-import { ReactComponent as Cart } from "../images/cart-icon-2.svg";
+import { ReactComponent as CartIcon } from "../images/icon-cart.svg";
 import ImageThumbnails from "./ImageThumbnails";
 import ViewImageModal from "./ViewImageModal";
-import arrowRight from "../images/icon-next.svg";
-import arrowLeft from "../images/icon-previous.svg";
+import { ReactComponent as NextIcon } from "../images/icon-next.svg";
+import { ReactComponent as PreviousIcon } from "../images/icon-previous.svg";
 
 export default function ProductDetails() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -13,10 +13,10 @@ export default function ProductDetails() {
       {modalOpen && <ViewImageModal onCloseModal={setModalOpen} />}
       <div className="product-details">
         <span className="right-icon">
-          <img src={arrowRight} alt="" />
+          <NextIcon />
         </span>
         <span className="left-icon">
-          <img src={arrowLeft} alt="" />
+          <PreviousIcon />
         </span>
         <div className="images-container">
           <div>
@@ -51,7 +51,7 @@ export default function ProductDetails() {
               <button className="btn-plus">+</button>
             </div>
             <button className="add-to-cart">
-              <Cart fill="white" stroke="white" />
+              <CartIcon className="cart-icon" />
               Add to Cart
             </button>
           </div>

@@ -40,7 +40,16 @@
 
     .menu-icon {
       margin-right: 1.5rem;
+      transform: scale(0.9);
+      color: $dark-grayish-blue;
+      cursor: pointer;
       display: none;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $dark-blue;
+      }
     }
   }
 
@@ -55,8 +64,16 @@
       cursor: pointer;
     }
 
-    img:hover {
-      fill: red;
+    .cart-icon {
+      color: $dark-grayish-blue;
+      width: 2.4rem;
+      cursor: pointer;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $dark-blue;
+      }
     }
 
     img.avatar {
@@ -84,6 +101,10 @@
     }
     .links-right {
       width: 9rem;
+
+      .cart-icon {
+        transform: scale(0.8);
+      }
       img.avatar {
         width: 40px;
       }
@@ -130,7 +151,7 @@
       width: 6rem;
 
       .cart-icon {
-        width: 1.8rem;
+        transform: scale(0.8);
       }
     }
   }

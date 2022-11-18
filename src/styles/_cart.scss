@@ -47,6 +47,13 @@
       padding: 1.5rem;
       border-radius: 1rem;
       font-weight: 700;
+      cursor: pointer;
+
+      &:hover,
+      &:active,
+      &:focus {
+        opacity: 0.75;
+      }
     }
   }
 
@@ -86,10 +93,21 @@
       margin: 0.5rem 0;
     }
 
-    .delete-icon {
+    .delete-icon-container {
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    .delete-icon {
+      color: $grayish-blue;
+      cursor: pointer;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $orange;
+      }
     }
   }
 

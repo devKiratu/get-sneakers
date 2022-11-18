@@ -14,10 +14,11 @@
     height: 100%;
     padding: 2rem;
 
-    img {
+    .close-icon {
       margin-bottom: 3rem;
-      width: 1rem;
+      color: $dark-grayish-blue;
       cursor: pointer;
+      transform: scale(0.9);
     }
 
     ul {

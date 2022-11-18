@@ -1,7 +1,7 @@
 import logo from "../images/logo.svg";
-import cart from "../images/icon-cart.svg";
 import avatar from "../images/image-avatar.png";
-import menuIcon from "../images/icon-menu.svg";
+import { ReactComponent as MenuIcon } from "../images/icon-menu.svg";
+import { ReactComponent as CartIcon } from "../images/icon-cart.svg";
 
 interface NavbarProps {
   onToggleCart: (state: boolean) => void;
@@ -17,12 +17,7 @@ export default function Navbar({
   return (
     <nav className="nav">
       <div className="links-left">
-        <img
-          src={menuIcon}
-          alt=""
-          className="menu-icon"
-          onClick={() => onOpenMenu(true)}
-        />
+        <MenuIcon className="menu-icon" onClick={() => onOpenMenu(true)} />
         <img src={logo} alt="" className="logo" />
         <ul>
           <li>Collections</li>
@@ -33,11 +28,9 @@ export default function Navbar({
         </ul>
       </div>
       <div className="links-right">
-        <img
-          src={cart}
-          alt=""
-          onClick={() => onToggleCart(!cartOpen)}
+        <CartIcon
           className="cart-icon"
+          onClick={() => onToggleCart(!cartOpen)}
         />
         <img src={avatar} alt="" className="avatar" />
       </div>

@@ -1,5 +1,5 @@
 import product from "../images/image-product-1-thumbnail.jpg";
-import deleteIcon from "../images/icon-delete.svg";
+import { ReactComponent as DeleteIcon } from "../images/icon-delete.svg";
 
 export default function CartItem() {
   return (
@@ -14,8 +14,8 @@ export default function CartItem() {
           <span className="total-price">$375.00</span>
         </p>
       </div>
-      <div className="delete-icon">
-        <img src={deleteIcon} alt="" />
+      <div className="delete-icon-container">
+        <DeleteIcon className="delete-icon" />
       </div>
     </div>
   );

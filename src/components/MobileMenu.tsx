@@ -1,4 +1,4 @@
-import closeIcon from "../images/icon-close.svg";
+import { ReactComponent as CloseIcon } from "../images/icon-close.svg";
 
 interface MobileMenuProps {
   onCloseMenu: (state: boolean) => void;
@@ -8,7 +8,7 @@ export default function MobileMenu({ onCloseMenu }: MobileMenuProps) {
   return (
     <div className="menu-container">
       <div className="menu-content">
-        <img src={closeIcon} alt="" onClick={() => onCloseMenu(false)} />
+        <CloseIcon onClick={() => onCloseMenu(false)} className="close-icon" />
         <ul>
           <li>Collections</li>
           <li>Men</li>
