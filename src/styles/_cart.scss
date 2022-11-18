@@ -53,7 +53,6 @@
   .cart-item {
     width: 100%;
     margin: 0 0 2rem 0;
-    // border: 1px solid yellow;
     display: grid;
     grid-template-columns: 1.5fr 7fr 0.5fr;
     gap: 2rem;
@@ -65,7 +64,6 @@
         object-fit: contain;
         border-radius: 0.5rem;
       }
-      // border: 1px solid blue;
     }
 
     .text-container {
@@ -73,7 +71,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      // border: 1px solid greenyellow;
 
       .total-price {
         display: inline-block;
@@ -93,12 +90,25 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      // border: 1px solid red;
     }
   }
 
+  @media screen and (max-width: 1280px) {
+    right: 6rem;
+  }
+  @media screen and (max-width: 1024px) {
+    right: 5rem;
+  }
+  @media screen and (max-width: 768px) {
+    right: 3rem;
+    top: 5rem;
+  }
+  @media screen and (max-width: 576px) {
+    right: 1.5rem;
+  }
   @media screen and (max-width: 377px) {
     right: 0.8rem;
     top: 7rem;
+    width: 95%;
   }
 }
