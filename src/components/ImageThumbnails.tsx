@@ -6,10 +6,18 @@ import image4 from "../images/image-product-4-thumbnail.jpg";
 export default function ImageThumbnails() {
   return (
     <div className="thumbnails-container">
-      <img src={image1} alt="" />
-      <img src={image2} alt="" />
-      <img src={image3} alt="" />
-      <img src={image4} alt="" />
+      <span>
+        <img src={image1} alt="" />
+      </span>
+      <span>
+        <img src={image2} alt="" />
+      </span>
+      <span>
+        <img src={image3} alt="" />
+      </span>
+      <span>
+        <img src={image4} alt="" />
+      </span>
     </div>
   );
 }

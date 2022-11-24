@@ -7,12 +7,24 @@
   align-items: center;
   margin-top: 2rem;
 
+  span {
+    background-color: $white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
   img {
     width: 80px;
     height: auto;
     display: block;
     margin: 0;
-    border-radius: 0.5rem;
+    cursor: pointer;
+
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: 0.5;
+    }
   }
 
   @media screen and (max-width: 1024px) {
