@@ -27,6 +27,13 @@
     }
   }
 
+  .current {
+    outline: 2px solid $orange;
+    img {
+      opacity: 0.4;
+    }
+  }
+
   @media screen and (max-width: 1024px) {
     width: 300px;
 

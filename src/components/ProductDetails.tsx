@@ -1,48 +1,100 @@
-import { useState } from "react";
-import product from "../images/image-product-1.jpg";
+import { useEffect, useState } from "react";
 import { ReactComponent as CartIcon } from "../images/icon-cart.svg";
 import ImageThumbnails from "./ImageThumbnails";
 import ViewImageModal from "./ViewImageModal";
 import { ReactComponent as NextIcon } from "../images/icon-next.svg";
 import { ReactComponent as PreviousIcon } from "../images/icon-previous.svg";
+import sneakerData, { Image } from "../data";
+import { ProductData } from "../data";
 
 export default function ProductDetails() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [sneaker, setSneaker] = useState<ProductData>();
+  const [currentImage, setCurrentImage] = useState<Image>();
+
+  const loadSneaker = () => {
+    setSneaker(sneakerData);
+    setCurrentImage(sneakerData.images[0]);
+  };
+
+  const updateCurrentImage = (img: Image) => {
+    setCurrentImage(img);
+  };
+
+  const updateCarouselForward = () => {
+    if (sneaker) {
+      const images = sneaker?.images;
+      const index = images.findIndex((image) => image.id === currentImage?.id);
+      if (index < images.length - 1) {
+        updateCurrentImage(images[index + 1]);
+      } else {
+        updateCurrentImage(images[0]);
+      }
+    }
+  };
+
+  const updateCarouselBack = () => {
+    if (sneaker) {
+      const images = sneaker?.images;
+      const index = images.findIndex((image) => image.id === currentImage?.id);
+      if (index > 0) {
+        updateCurrentImage(images[index - 1]);
+      } else {
+        updateCurrentImage(images[images.length - 1]);
+      }
+    }
+  };
+
+  useEffect(() => {
+    loadSneaker();
+  }, []);
+
+  if (!sneaker || !currentImage) return null;
+
   return (
     <>
-      {modalOpen && <ViewImageModal onCloseModal={setModalOpen} />}
+      {modalOpen && (
+        <ViewImageModal
+          currentImage={currentImage}
+          images={sneaker.images}
+          onCloseModal={setModalOpen}
+          onUpdateImage={updateCurrentImage}
+          onUpdateCarouselForward={updateCarouselForward}
+          onUpdateCarouselBack={updateCarouselBack}
+        />
+      )}
       <div className="product-details">
-        <span className="right-icon">
+        <span className="right-icon" onClick={updateCarouselForward}>
           <NextIcon />
         </span>
-        <span className="left-icon">
+        <span className="left-icon" onClick={updateCarouselForward}>
           <PreviousIcon />
         </span>
         <div className="images-container">
           <div>
             <img
-              src={product}
+              src={currentImage.imageUri}
               alt=""
               onClick={() => setModalOpen(true)}
               className="main-image"
             />
           </div>
-          <ImageThumbnails />
+          <ImageThumbnails
+            currentImage={currentImage}
+            images={sneaker.images}
+            onUpdateImage={updateCurrentImage}
+          />
         </div>
         <div className="product-description">
-          <p className="company-name">sneaker company</p>
-          <h1>Fall Limited Edition Sneakers</h1>
-          <p className="description-text">
-            These low-profile sneakers are your perfect casual wear companion.
-            Featuring a durable rubber outer sole, they'll withstand everything
-            the weather can offer.
-          </p>
+          <p className="company-name">{sneaker.maker}</p>
+          <h1>{sneaker.title}</h1>
+          <p className="description-text">{sneaker.description}</p>
           <div className="price-container">
             <div className="current-price">
-              <h2>$125.00</h2>
-              <p className="discount-badge">50%</p>
+              <h2>{sneaker.price}</h2>
+              <p className="discount-badge">{sneaker?.discount}</p>
             </div>
-            <p className="old-price">$250.00</p>
+            <p className="old-price">{sneaker?.oldPrice}</p>
           </div>
           <div className="buttons-container">
             <div className="change-item-count">
