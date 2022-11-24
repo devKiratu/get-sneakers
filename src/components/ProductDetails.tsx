@@ -65,10 +65,10 @@ export default function ProductDetails() {
       )}
       <div className="product-details">
         <span className="right-icon" onClick={updateCarouselForward}>
-          <NextIcon />
+          <NextIcon className="icon" />
         </span>
         <span className="left-icon" onClick={updateCarouselForward}>
-          <PreviousIcon />
+          <PreviousIcon className="icon" />
         </span>
         <div className="images-container">
           <div>

@@ -200,7 +200,7 @@
       position: absolute;
       width: 3rem;
       height: 3rem;
-      background-color: $light-grayish-blue;
+      background-color: $pale-orange;
       border-radius: 50%;
       top: 40%;
       right: 5rem;
@@ -215,7 +215,7 @@
       position: absolute;
       width: 3rem;
       height: 3rem;
-      background-color: $light-grayish-blue;
+      background-color: $pale-orange;
       border-radius: 50%;
       top: 40%;
       left: 5rem;
@@ -271,14 +271,24 @@
 
     .right-icon {
       background-color: $white;
-      top: 18rem;
+      top: 22rem;
       right: 2rem;
+      transform: scale(0.8);
+
+      .icon {
+        transform: scale(0.7);
+      }
     }
 
     .left-icon {
       background-color: $white;
-      top: 18rem;
+      top: 22rem;
       left: 2rem;
+      transform: scale(0.8);
+
+      .icon {
+        transform: scale(0.7);
+      }
     }
 
     .images-container {
