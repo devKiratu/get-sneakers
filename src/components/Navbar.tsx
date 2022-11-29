@@ -32,11 +32,13 @@ export default function Navbar({
         </ul>
       </div>
       <div className="links-right">
-        {items > 0 && <span className="cart-items">{items}</span>}
-        <CartIcon
-          className="cart-icon"
-          onClick={() => onToggleCart(!cartOpen)}
-        />
+        <div className="cart-container">
+          {items > 0 && <span className="cart-items">{items}</span>}
+          <CartIcon
+            className="cart-icon"
+            onClick={() => onToggleCart(!cartOpen)}
+          />
+        </div>
         <img src={avatar} alt="" className="avatar" />
       </div>
     </nav>

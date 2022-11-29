@@ -75,21 +75,24 @@
         color: $dark-blue;
       }
     }
+    .cart-container {
+      position: relative;
 
-    .cart-items {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      background-color: $orange;
-      color: $white;
-      font-size: 1.2rem;
-      width: 2rem;
-      height: 1.5rem;
-      border-radius: 1rem;
-      position: absolute;
-      top: 1.3rem;
-      right: 12rem;
-      z-index: 10;
+      .cart-items {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $orange;
+        color: $white;
+        font-size: 1.2rem;
+        width: 2rem;
+        height: 1.5rem;
+        border-radius: 1rem;
+        position: absolute;
+        top: -0.8rem;
+        right: -0.5rem;
+        z-index: 10;
+      }
     }
 
     img.avatar {

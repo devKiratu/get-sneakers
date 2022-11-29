@@ -5,7 +5,7 @@ import { deletedProduct } from "../store/cart";
 interface CartItemProps {
   image: string;
   title: string;
-  price: string;
+  price: number;
   count: number;
   id: string;
 }
@@ -27,8 +27,10 @@ export default function CartItem({
       <div className="text-container">
         <p>{title}</p>
         <p>
-          <span>{`${price} x ${count}`}</span>
-          <span className="total-price">$375.00</span>
+          <span>{`$${price.toFixed(2)} x ${count}`}</span>
+          <span className="total-price">{`$${(price * count).toFixed(
+            2
+          )}`}</span>
         </p>
       </div>
       <div className="delete-icon-container">

@@ -104,10 +104,10 @@ export default function ProductDetails() {
           <p className="description-text">{sneaker.description}</p>
           <div className="price-container">
             <div className="current-price">
-              <h2>{sneaker.price}</h2>
+              <h2>${sneaker.price.toFixed(2)}</h2>
               <p className="discount-badge">{sneaker?.discount}</p>
             </div>
-            <p className="old-price">{sneaker?.oldPrice}</p>
+            <p className="old-price">${sneaker.oldPrice?.toFixed(2)}</p>
           </div>
           <div className="buttons-container">
             <div className="change-item-count">

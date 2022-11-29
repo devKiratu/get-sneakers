@@ -12,9 +12,9 @@ export interface ProductData {
   maker: string;
   title: string;
   description: string;
-  price: string;
+  price: number;
   discount?: string;
-  oldPrice?: string;
+  oldPrice?: number;
   images: Image[];
 }
 
@@ -30,9 +30,9 @@ const sneakerData: ProductData = {
   title: "Fall Limited Edition Sneakers",
   description:
     "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
-  price: "$125.00",
+  price: 125.0,
   discount: "50%",
-  oldPrice: "$250",
+  oldPrice: 250,
   images: [
     {
       id: "1",
