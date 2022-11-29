@@ -6,11 +6,24 @@ import { ReactComponent as NextIcon } from "../images/icon-next.svg";
 import { ReactComponent as PreviousIcon } from "../images/icon-previous.svg";
 import sneakerData, { Image } from "../data";
 import { ProductData } from "../data";
+import { useDispatch } from "react-redux";
+import { addedProduct } from "../store/cart";
 
 export default function ProductDetails() {
   const [modalOpen, setModalOpen] = useState(false);
   const [sneaker, setSneaker] = useState<ProductData>();
   const [currentImage, setCurrentImage] = useState<Image>();
+  const [itemCount, setItemCount] = useState(1);
+
+  const dispatch = useDispatch();
+
+  const incrementItemCount = () => {
+    setItemCount(itemCount + 1);
+  };
+
+  const decrementItemCount = () => {
+    if (itemCount > 1) setItemCount(itemCount - 1);
+  };
 
   const loadSneaker = () => {
     setSneaker(sneakerData);
@@ -67,7 +80,7 @@ export default function ProductDetails() {
         <span className="right-icon" onClick={updateCarouselForward}>
           <NextIcon className="icon" />
         </span>
-        <span className="left-icon" onClick={updateCarouselForward}>
+        <span className="left-icon" onClick={updateCarouselBack}>
           <PreviousIcon className="icon" />
         </span>
         <div className="images-container">
@@ -98,11 +111,20 @@ export default function ProductDetails() {
           </div>
           <div className="buttons-container">
             <div className="change-item-count">
-              <button className="btn-minus">-</button>
-              <p className="item-count">0</p>
-              <button className="btn-plus">+</button>
+              <button className="btn-minus" onClick={decrementItemCount}>
+                -
+              </button>
+              <p className="item-count">{itemCount}</p>
+              <button className="btn-plus" onClick={incrementItemCount}>
+                +
+              </button>
             </div>
-            <button className="add-to-cart">
+            <button
+              className="add-to-cart"
+              onClick={() =>
+                dispatch(addedProduct({ ...sneaker, count: itemCount }))
+              }
+            >
               <CartIcon className="cart-icon" />
               Add to Cart
             </button>

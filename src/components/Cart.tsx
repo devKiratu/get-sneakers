@@ -1,7 +1,14 @@
 import CartItem from "./CartItem";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
 
 export default function Cart() {
-  const isEmpty = !true;
+  const { products } = useSelector((state: RootState) => state.cart);
+
+  const items = Object.values(products);
+
+  const isEmpty = items.length < 1;
+
   return (
     <div className="cart">
       <header>
@@ -16,7 +23,16 @@ export default function Cart() {
         )}
         {!isEmpty && (
           <>
-            <CartItem />
+            {items.map((product) => (
+              <CartItem
+                id={product.id}
+                image={product.images[0].imageUri}
+                price={product.price}
+                title={product.title}
+                count={product.count}
+                key={product.id}
+              />
+            ))}
             <button>Checkout</button>
           </>
         )}

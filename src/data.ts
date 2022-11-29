@@ -8,6 +8,7 @@ import thumbnail3 from "./images/image-product-3-thumbnail.jpg";
 import thumbnail4 from "./images/image-product-4-thumbnail.jpg";
 
 export interface ProductData {
+  id: string;
   maker: string;
   title: string;
   description: string;
@@ -24,6 +25,7 @@ export interface Image {
 }
 
 const sneakerData: ProductData = {
+  id: "1",
   maker: "sneaker company",
   title: "Fall Limited Edition Sneakers",
   description:

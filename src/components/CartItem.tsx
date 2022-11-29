@@ -1,21 +1,41 @@
-import product from "../images/image-product-1-thumbnail.jpg";
 import { ReactComponent as DeleteIcon } from "../images/icon-delete.svg";
+import { useDispatch } from "react-redux";
+import { deletedProduct } from "../store/cart";
 
-export default function CartItem() {
+interface CartItemProps {
+  image: string;
+  title: string;
+  price: string;
+  count: number;
+  id: string;
+}
+
+export default function CartItem({
+  image,
+  title,
+  price,
+  count,
+  id,
+}: CartItemProps) {
+  const dispatch = useDispatch();
+
   return (
     <div className="cart-item">
       <div className="thumbnail">
-        <img src={product} alt="" />
+        <img src={image} alt="" />
       </div>
       <div className="text-container">
-        <p>Fall Limited Edition Sneakers</p>
+        <p>{title}</p>
         <p>
-          <span>$125.00 x 3</span>
+          <span>{`${price} x ${count}`}</span>
           <span className="total-price">$375.00</span>
         </p>
       </div>
       <div className="delete-icon-container">
-        <DeleteIcon className="delete-icon" />
+        <DeleteIcon
+          className="delete-icon"
+          onClick={() => dispatch(deletedProduct(id))}
+        />
       </div>
     </div>
   );
